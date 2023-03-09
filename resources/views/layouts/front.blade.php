@@ -76,7 +76,7 @@
                             </div>
                         </li>
 
-                        {{-- ниже идет КОРЗИНКА: --}}
+
                         <li class="nav-item dropdown">
                             <a id="cartDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <div class="cart-svg">

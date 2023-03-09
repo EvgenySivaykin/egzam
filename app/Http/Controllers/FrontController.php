@@ -6,9 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Dish;
 use App\Models\Restaurant;
 use App\Services\CartService;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
     public function home(Request $request)
     {
         $perPageShow = in_array($request->per_page, Dish::PER_PAGE) ? $request->per_page : 'all';
@@ -97,6 +106,23 @@ class FrontController extends Controller
         $cart->update($updatedCart); 
         }
         return redirect()->back();   
+    }
+
+    public function makeOrder(CartService $cart)
+    {
+        $order = new Order;
+
+        $order->user_id = Auth::user()->id;
+
+        $order->order_json = json_encode($cart->order());
+
+        $order->save();
+
+        $cart->empty();
+
+        return redirect()->route('start');
+
+        
     }
 
 

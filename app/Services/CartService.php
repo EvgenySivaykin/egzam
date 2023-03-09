@@ -29,9 +29,7 @@ class CartService
         return match($props) {
             'count' => $this->count,
             'list' => $this->cartList,
-            //начало вставки:
             'cart' => $this->cart,
-            //конец вставки
             default => null,
         };
     }
@@ -58,8 +56,29 @@ class CartService
         session()->put('cart', $this->cart);
     }
 
+    public function order()
+    {
+        $order = (object)[];
+        $order->total = $this->total;
+        $order->dishes = [];
 
+        foreach($this->cartList as $dish){
+            $order->dishes[] = (object)[
+                'title' => $dish->title,
+                'count' => $dish->count,
+                'id' => $dish->id,
+            ];
+        }
+        return $order;
+    }
 
+    public function empty()
+    {
+        session()->put('cart', []);
+        $this->count = 0;
+        $this->cartList = collect();
+        $this->cart = [];
+    }
 
     public function test()
     {
