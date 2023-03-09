@@ -1,0 +1,237 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+.head-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.list-table {
+    margin: 7px;
+    padding: 7px;
+    border: 1px solid cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 14px);
+    justify-content: space-between;
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 2em;
+        color: $primary;
+        text-align: center;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: $primary;
+        }
+
+    }
+
+    h4 {
+        font-size: 1.5em;
+        color: crimson;
+        text-align: center;
+    }
+
+    .smallimg {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+        }
+
+    }
+
+    .info,
+    .buy {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .price {
+        font-size: 2em;
+        color: crimson;
+    }
+
+    &.one {
+        // border: 5px solid gray;
+        border: none;
+
+        .smallimg {
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 400px;
+            }
+        }
+
+        //вставляем:
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 3em;
+            color: $primary;
+            text-align: center;
+
+            svg {
+                width: 40px;
+                height: 40px;
+                fill: $primary;
+            }
+        }
+    }
+
+    &.cats {
+        border: none;
+
+        a {
+            text-decoration: none;
+
+            .count {
+                font-size: 2.0em;
+                color: skyblue;
+                text-align: center;
+            }
+
+            h3 {
+                font-size: 2em;
+                color: $primary;
+                text-align: center;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    fill: $primary;
+                }
+
+                // .count {
+                //     font-size: 0.7em;
+                //     color: skyblue;
+                //     text-align: center;
+                // }
+            }
+        }
+    }
+
+    //вставляем:
+    &.cart {
+        border: none;
+        display: flex;
+
+        .list-table__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .smallimg {
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 50px;
+            }
+        }
+
+        h3 {
+            font-size: 2em;
+            color: $primary;
+            text-align: center;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                fill: $primary;
+            }
+        }
+    }
+
+    [type=number] {
+        width: 50px;
+        border: 1px solid $primary;
+        outline: none;
+    }
+
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+}
+
+// .cart-svg {
+//     span {
+//         font-size: 20px;
+//     }
+// }
+
+// svg.cart {
+//     width: 45px;
+//     height: 45px;
+//     fill: skyblue;
+// }
+
+.nav-item.dropdown #cartDropdown {
+    &::after {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .cart-svg {
+        position: relative;
+        text-decoration: none;
+
+        span {
+            font-size: 20px;
+            text-decoration: none;
+
+            &.count {
+                width: 30px;
+                text-align: center;
+                position: absolute;
+                top: 0;
+                left: 8px;
+                text-decoration: none;
+            }
+        }
+
+        svg.cart {
+            width: 45px;
+            height: 45px;
+            fill: skyblue;
+        }
+    }
+}
+
+.dishes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 3em;
+    width: 100%;
+    height: 100%;
+}

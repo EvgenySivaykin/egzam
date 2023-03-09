@@ -1,0 +1,150 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+label {
+    font-size: 1.4em;
+    user-select: none;
+
+    &.pointer {
+        cursor: pointer;
+    }
+}
+
+a.btn,
+button.btn[type=submit] {
+    font-size: 1.4em;
+    margin: 0 0 0 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.list-table {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 80%;
+
+        h4 {
+            font-size: 1.1em;
+            // width: 40%;
+        }
+
+        h3 {
+            // font-size: 1.4em;
+            font-size: 2em;
+            width: 30%;
+        }
+
+        .country {
+            font-size: 1.6em;
+            width: 20%;
+            font-weight: 400;
+        }
+
+        .period {
+            font-size: 1.2em;
+            width: 40%;
+            font-weight: 300;
+
+            h4 {
+                font-size: 1.1em;
+                // width: 40%;
+            }
+
+            h3 {
+                font-size: 1.4em;
+                width: 20%;
+            }
+        }
+
+        .data {
+            font-size: 1.2em;
+            width: 40%;
+            font-weight: 300;
+
+            h4 {
+                font-size: 1.1em;
+                // width: 40%;
+            }
+
+            h3 {
+                font-size: 1.4em;
+                width: 20%;
+            }
+        }
+
+        .desc {
+            font-size: 1.2em;
+            width: 100%;
+            font-weight: 300;
+        }
+
+        .price {
+            font-size: 1.6em;
+            width: 20%;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .city {
+            font-size: 1.6em;
+            width: 40%;
+            text-align: center;
+            font-weight: 200;
+
+            h4 {
+                font-size: 0.8em;
+                // width: 40%;
+            }
+
+            h3 {
+                font-size: 1.0em;
+                width: 100%;
+            }
+        }
+
+        .smallimg {
+            width: 20%;
+            text-align: center;
+
+            img {
+                height: 40px;
+                width: auto;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.img {
+    height: 300px;
+
+
+    img {
+        display: block;
+        height: 300px;
+        width: auto;
+    }
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
