@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController as R;
 use App\Http\Controllers\DishController as D;
 use App\Http\Controllers\FrontController as F;
+use App\Http\Controllers\OrderController as O;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,11 @@ Route::prefix('admin/dishes')->name('dishes-')->group(function () {
     Route::delete('/delete/{dish}', [D::class, 'destroy'])->name('delete')->middleware('roles:A');
 });
 
+Route::prefix('admin/orders')->name('orders-')->group(function () {
+    Route::get('/', [O::class, 'index'])->name('index')->middleware('roles:A|M');
+    Route::put('/edit/{order}', [O::class, 'update'])->name('update')->middleware('roles:A');
+    Route::delete('/delete/{order}', [O::class, 'destroy'])->name('delete')->middleware('roles:A');
+});
 
 
 Auth::routes();
