@@ -1,8 +1,9 @@
 <x-mail::message>
-    # Order Shipped
+    # Order Confirmed
 
-    Your order Number {{$ID}} has been confirmed!
+    {{$name}}! Your order Number {{$ID}} has been confirmed!
 
-    Thanks,<br>
-    Restaurants Team
+
+    Thanks,
+    Your Restaurants Team
 </x-mail::message>

@@ -32,7 +32,7 @@ class OrderShipped extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Order Shipped',
+            subject: 'Order Confirmed',
         );
     }
 
@@ -47,6 +47,7 @@ class OrderShipped extends Mailable
             markdown: 'emails.shipped',
             with: [
                 'ID' => $this->order->id,
+                'name' => $this->order->user->name,
             ],
         );
     }
